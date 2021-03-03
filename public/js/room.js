@@ -1,5 +1,5 @@
 // Initialize client socket instance
-const socket = io.connect("/")
+const socket = io.connect()
 
 socket.on("connect", function() {
     // if the client is an admin, we want to create a room server side, otherwise, we want to join a room
