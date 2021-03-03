@@ -116,10 +116,8 @@ app.get('/room/guest', (req, res) => {
 }) // Room URL as guest
 
 // Initialize server
-const PORT = process.env.PORT || 3000;
-
-const server = app.listen(PORT, () => {
-    console.log('Server Started')
+const server = app.listen(process.env.PORT, () => {
+    console.log('Server Started on port: ', process.env.PORT)
 })
 
 // Initialize socket.io server instance
