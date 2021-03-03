@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trivia Bowl Buzzer</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container text-center">
+            <div class="jumbotron text-center">
+                <h1 id="room-id" class="display-3"><%= room %></h1>
+            </div>
+            <h1 id="username" class="display-4">Username: <%= username %></h1>
+            <div class="container w-50 text-center p-4">
+                <ul id="users" class="list-group"></ul>
+            </div>
+
+            <% if (isAdmin == true) { %>
+                <div class="btn-group btn-group-lg" role="group" aria-label="">
+                    <button type="button" class="btn btn-outline-secondary" id="buzzer-unlock">Unlock Buzzer</button>
+                    <button type="button" class="btn btn-outline-secondary" id="buzzer-reset">Reset Buzzer</button>
+                </div>
+            <% } else { %>
+                <button type="button" class="btn btn-lg btn-danger" id="buzzer">BUZZ!</button>
+            <% } %>
+        </div>
+        
+        <script>
+            let username = "<%= username %>"
+            let room = "<%= room %>"  
+            let isAdmin = "<%= isAdmin %>"
+        </script>
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script src="/js/room.js"></script>
+    </body>
+</html>
