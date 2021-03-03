@@ -82,6 +82,12 @@ socket.on("connect", function() {
         buzzer.addEventListener("click", function() {
             socket.emit("buzz", {time: new Date().getTime()})
         })
+        
+        document.addEventListener("keydown", (e) => {
+            if(e.key == "Spacebar") {
+                socket.emit("buzz", {time: new Date().getTime()})
+            }
+        })
     }
 
     if(resetBuzzer) {
