@@ -47,7 +47,7 @@ socket.on("connect", function() {
             }
         }
 
-        users = Array.from(usersList)
+        users = Array.from(document.getElementsByClassName("user"))
 
         // for each user in the user list, determine which part of the buzzer they are involved in, and color based on that
         users.forEach(user => {
