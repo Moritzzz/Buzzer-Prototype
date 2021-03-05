@@ -11,7 +11,7 @@ socket.on("connect", function() {
 
     // handle join failures and successes
     socket.on("joinFailure", function() {
-        window.location.replace("http://localhost:3000/");
+        window.location.replace("http://buzzer-prototype.herokuapp.com/");
     })
     
     socket.on("joinSuccess", data => {
@@ -20,7 +20,7 @@ socket.on("connect", function() {
 
     // redirect when a room gets disolved
     socket.on("dissolveRoom", function() {
-        window.location.replace("http://localhost:3000/");
+        window.location.replace("http://buzzer-prototype.herokuapp.com/");
     })
     
     // update the users list to reflect the database
